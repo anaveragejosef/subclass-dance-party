@@ -14,6 +14,6 @@ changeColorDancer.prototype.step = function() {
   var randomG = Math.floor(Math.random() * 255);
   var randomB = Math.floor(Math.random() * 255);
   // Update the border-color wiht our new color combination
-  this.$node.css('border-color', `rgb(${randomR}, ${randomG}, ${randomB})`);
-  this.$node.css({'border-width': '20px', 'border-radius': '20px'});
+  this.$node.css('background-color', `rgb(${randomR}, ${randomG}, ${randomB})`);
+  // this.$node.css({'width': '25px', 'height': '25px', 'border-radius': '25px'});
 };

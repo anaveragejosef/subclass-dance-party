@@ -25,7 +25,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 5000 + 1000
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
@@ -38,5 +38,39 @@ $(document).ready(function() {
       window.dancers[i].lineUp();
     }
   });
+
+  $('.partnerUp').on('click', function(event) {
+    // if (event.target.className === 'dancer') {
+    //   console.log(event.target);
+    // }
+    // randomly pick a dancer object in the dancer array and assign to mainDancer
+    var mainDancer = window.dancers[(Math.floor(Math.random() * window.dancers.length))];
+    // Find top and left value for the main dancer (event.target)
+    var topOfMain = mainDancer.top;
+    var leftOfMain = mainDancer.left;
+    var closestObj = null;
+    var shortestDistance = null;
+    // Iterate over the window.array
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i] !== mainDancer) {
+        // Find the hypotenuse
+        var topDifference = Math.abs(window.dancers[i].top - topOfMain);
+        var leftDifference = Math.abs(window.dancers[i].left- leftOfMain);
+        var hypotenuse = Math.sqrt(topDifference * topDifference + leftDifference * leftDifference);
+        // Compare the hypotenuse to the shortestDistance
+        if (closestObj === null || hypotenuse < shortestDistance){
+          // Update if it meets these conditions
+          closestObj = window.dancers[i];
+          shortestDistance = hypotenuse;
+        }
+      }
+    }
+    // Perform some action on closestObj and mainDancer - Bigger to be visual then circle(?)
+    // mainDancer.$node.css({'width': '100px', 'height': '100px'});
+    // closestObj.$node.css({'width': '100px', 'height': '100px'});
+    mainDancer.$node.addClass('partners');        //css('background-image', "url('src/fire.png')");
+    closestObj.$node.addClass('partners');
+  });
+
 });
 

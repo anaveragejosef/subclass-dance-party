@@ -11,7 +11,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .lineup{
+.title, .addDancerButton, .lineup, .partnerUp{
   padding:5px 12px;
   float:right;
 }
@@ -22,8 +22,14 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+.dancer .partners{
+  background-image: url('src/fire.png')
+}
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:2px solid black;
+  background-color: red;
+  border-radius:15px;
   position:absolute;
+  height: 25px;
+  width: 25px
 }
