@@ -32,7 +32,7 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-makeDancer.prototype.lineUp = function(){
+makeDancer.prototype.lineUp = function() {
   // Animate on each item
   this.$node.animate({top: '500px'}, 5000);
 };
