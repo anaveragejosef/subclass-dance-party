@@ -21,11 +21,11 @@ describe('changeSizeDancer', function() {
   it('should have a step function that changes the border-width', function() {
     sinon.spy(changeSizeDancerEx.$node, 'css');
     // Get border-width of changeSizeDancerEx
-    var oldSize = changeSizeDancerEx.$node.css("border-width");
+    var oldSize = changeSizeDancerEx.$node.css('border-width');
     console.log(oldSize);
     changeSizeDancerEx.step();
     // Get border-width of changeSizeDancerEx
-    var newSize = changeSizeDancerEx.$node.css("border-width");
+    var newSize = changeSizeDancerEx.$node.css('border-width');
     console.log(newSize);
     // It is possible it will return false since this is randomly generated
     expect(oldSize === newSize).to.be.false;

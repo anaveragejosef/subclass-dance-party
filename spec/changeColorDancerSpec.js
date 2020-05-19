@@ -21,10 +21,10 @@ describe('changeColorDancer', function() {
   it('should have a step function that changes the border-color', function() {
     sinon.spy(changeColorDancerEx.$node, 'css');
     // Get border-color of changeColorDancerEx
-    var oldColor = changeColorDancerEx.$node.css("border-left-color");
+    var oldColor = changeColorDancerEx.$node.css('border-left-color');
     changeColorDancerEx.step();
     // Get border-color of changeColorDancerEx
-    var newColor = changeColorDancerEx.$node.css("border-left-color");
+    var newColor = changeColorDancerEx.$node.css('border-left-color');
     // It is possible it will return false since this is randomly generated
     expect(oldColor === newColor).to.be.false;
   });
