@@ -22,8 +22,10 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer .partners{
-  background-image: url('src/fire.png')
+.partners{
+  content: url('src/fire.png');
+  height: 50px;
+  width: 50px;
 }
 .dancer{
   border:2px solid black;
@@ -31,5 +33,5 @@ body, a:link, a:visited, a:active{
   border-radius:15px;
   position:absolute;
   height: 25px;
-  width: 25px
+  width: 25px;
 }

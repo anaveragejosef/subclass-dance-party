@@ -25,7 +25,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 5000 + 1000
+      Math.random() * 3000 + 1000
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
@@ -40,9 +40,6 @@ $(document).ready(function() {
   });
 
   $('.partnerUp').on('click', function(event) {
-    // if (event.target.className === 'dancer') {
-    //   console.log(event.target);
-    // }
     // randomly pick a dancer object in the dancer array and assign to mainDancer
     var mainDancer = window.dancers[(Math.floor(Math.random() * window.dancers.length))];
     // Find top and left value for the main dancer (event.target)
@@ -66,8 +63,6 @@ $(document).ready(function() {
       }
     }
     // Perform some action on closestObj and mainDancer - Bigger to be visual then circle(?)
-    // mainDancer.$node.css({'width': '100px', 'height': '100px'});
-    // closestObj.$node.css({'width': '100px', 'height': '100px'});
     mainDancer.$node.addClass('partners');
     closestObj.$node.addClass('partners');
   });
