@@ -1,6 +1,5 @@
 var changeColorDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-  // this.$node = $('<span class="dancer color"></span>');
 };
 
 changeColorDancer.prototype = Object.create(makeDancer.prototype);
@@ -16,4 +15,5 @@ changeColorDancer.prototype.step = function() {
   var randomB = Math.floor(Math.random() * 255);
   // Update the border-color wiht our new color combination
   this.$node.css('border-color', `rgb(${randomR}, ${randomG}, ${randomB})`);
+  this.$node.css({'border-width': '20px', 'border-radius': '20px'});
 };

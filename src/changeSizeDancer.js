@@ -14,4 +14,9 @@ changeSizeDancer.prototype.step = function() {
   var size = Math.floor(Math.random() * (50 - 10) + 10);
   // Update border width
   this.$node.css('border-width', `${size}px`);
+
+  this.$node.on("mouseover", function() {
+    $( this ).toggle( "explode" );
+  });
+
 };
