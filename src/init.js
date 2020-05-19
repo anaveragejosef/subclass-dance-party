@@ -62,9 +62,16 @@ $(document).ready(function() {
         }
       }
     }
-    // Perform some action on closestObj and mainDancer - Bigger to be visual then circle(?)
+    // Add class that allows access to explode.gif
     mainDancer.$node.addClass('partners');
     closestObj.$node.addClass('partners');
+    // After exploding for 2 seconds, switch to fire
+    setTimeout(function() {
+      mainDancer.$node.css({'content': 'url("src/fire.png")', 'height': '75px', 'width': '75px'});
+    }, 2000);
+    setTimeout(function() {
+      closestObj.$node.css({'content': 'url("src/fire.png")', 'height': '75px', 'width': '75px'});
+    }, 2000);
   });
 
 });

@@ -1,5 +1,7 @@
 var changeColorDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<img class="changeColorDancer" src="src/cat.gif">');
+  this.setPosition.call(this, top, left);
 };
 
 changeColorDancer.prototype = Object.create(makeDancer.prototype);
@@ -9,11 +11,8 @@ changeColorDancer.prototype.step = function() {
   // Call the old version (makeDancer) of step at the beginning of any call to this new version of step
   makeDancer.prototype.step.call(this);
 
-  // Create random RGB numbers by multiplying 255 by Math.random()
-  var randomR = Math.floor(Math.random() * 255);
-  var randomG = Math.floor(Math.random() * 255);
-  var randomB = Math.floor(Math.random() * 255);
-  // Update the border-color wiht our new color combination
-  this.$node.css('background-color', `rgb(${randomR}, ${randomG}, ${randomB})`);
-  // this.$node.css({'width': '25px', 'height': '25px', 'border-radius': '25px'});
+  // Create random invert percentage by multiplying 100 by Math.random()
+  var random = Math.floor(Math.random() * 100);
+  // Update the invert filter with the new percentage
+  this.$node.css('filter', `invert(${random}%)`);
 };
