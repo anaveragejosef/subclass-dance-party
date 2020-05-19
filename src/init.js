@@ -55,10 +55,10 @@ $(document).ready(function() {
       if (window.dancers[i] !== mainDancer) {
         // Find the hypotenuse
         var topDifference = Math.abs(window.dancers[i].top - topOfMain);
-        var leftDifference = Math.abs(window.dancers[i].left- leftOfMain);
+        var leftDifference = Math.abs(window.dancers[i].left - leftOfMain);
         var hypotenuse = Math.sqrt(topDifference * topDifference + leftDifference * leftDifference);
         // Compare the hypotenuse to the shortestDistance
-        if (closestObj === null || hypotenuse < shortestDistance){
+        if (closestObj === null || hypotenuse < shortestDistance) {
           // Update if it meets these conditions
           closestObj = window.dancers[i];
           shortestDistance = hypotenuse;
@@ -68,7 +68,7 @@ $(document).ready(function() {
     // Perform some action on closestObj and mainDancer - Bigger to be visual then circle(?)
     // mainDancer.$node.css({'width': '100px', 'height': '100px'});
     // closestObj.$node.css({'width': '100px', 'height': '100px'});
-    mainDancer.$node.addClass('partners');        //css('background-image', "url('src/fire.png')");
+    mainDancer.$node.addClass('partners');
     closestObj.$node.addClass('partners');
   });
 
